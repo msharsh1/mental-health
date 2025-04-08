@@ -1,0 +1,21 @@
+sleep,appetite,focus,fatigue,mood_swings,social_interaction,stress,irritability,physical_symptoms,self_esteem,crying_spells,suicidal_thoughts,motivation,daily_functioning,panic_attacks,depression,anxiety
+low,low,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,unable,frequent,1,1
+normal,normal,normal,low,rare,normal,low,low,none,high,never,no,high,normal,no,0,0
+high,normal,normal,normal,occasional,very social,medium,medium,mild,average,sometimes,no,average,normal,rare,0,0
+low,low,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,reduced,frequent,1,1
+normal,normal,normal,low,rare,normal,low,low,none,high,never,no,high,normal,no,0,0
+low,low,normal,high,frequent,isolated,high,medium,mild,low,sometimes,sometimes,low,reduced,rare,1,0
+normal,normal,low,medium,occasional,normal,medium,medium,mild,average,sometimes,no,average,normal,rare,0,1
+high,high,high,low,rare,very social,low,low,none,high,never,no,high,normal,no,0,0
+low,normal,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,unable,frequent,1,1
+normal,normal,normal,normal,rare,normal,low,low,none,high,never,no,high,normal,no,0,0
+low,low,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,unable,frequent,1,1
+normal,low,normal,medium,occasional,normal,medium,medium,mild,average,sometimes,sometimes,average,reduced,rare,0,1
+low,normal,normal,high,frequent,isolated,high,medium,severe,low,sometimes,freq,low,reduced,frequent,1,1
+high,high,high,low,rare,very social,low,low,none,high,never,no,high,normal,no,0,0
+normal,normal,low,medium,occasional,normal,medium,medium,mild,average,sometimes,no,average,normal,rare,0,1
+low,low,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,unable,frequent,1,1
+normal,normal,normal,low,rare,normal,low,low,none,high,never,no,high,normal,no,0,0
+high,normal,normal,normal,rare,very social,low,low,mild,high,never,no,high,normal,no,0,0
+low,low,low,high,frequent,isolated,high,high,severe,low,frequent,freq,low,reduced,frequent,1,1
+normal,normal,normal,low,rare,normal,low,low,none,high,never,no,high,normal,no,0,0

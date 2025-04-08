@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Mental Health Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 30px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 700px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button, input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        ul {
+            max-width: 700px;
+            margin: auto;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .result {
+            text-align: center;
+            font-size: 18px;
+            color: #007BFF;
+            margin-top: 15px;
+        }
+        .logout {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+
+    <h2>Daily Mood Entry</h2>
+    <form method="POST">
+        <label for="mood">Today's Mood:</label>
+        <input type="text" name="mood" required>
+        <button type="submit">Save Mood</button>
+    </form>
+
+    <h3>Your Past Mood Entries</h3>
+    <ul>
+        {% for entry in moods %}
+            <li>{{ entry.timestamp }} - {{ entry.mood }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Check Mental Health Status</h2>
+    <form action="/predict" method="POST">
+
+        <label>Sleep:</label>
+        <select name="sleep" required>
+            <option>low</option><option>normal</option><option>high</option>
+        </select>
+
+        <label>Appetite:</label>
+        <select name="appetite" required>
+            <option>low</option><option>normal</option><option>high</option>
+        </select>
+
+        <label>Focus:</label>
+        <select name="focus" required>
+            <option>low</option><option>normal</option><option>high</option>
+        </select>
+
+        <label>Fatigue:</label>
+        <select name="fatigue" required>
+            <option>low</option><option>medium</option><option>high</option>
+        </select>
+
+        <label>Mood Swings:</label>
+        <select name="mood_swings" required>
+            <option>rare</option><option>occasional</option><option>frequent</option>
+        </select>
+
+        <label>Social Interaction:</label>
+        <select name="social_interaction" required>
+            <option>isolated</option><option>normal</option><option>very social</option>
+        </select>
+
+        <label>Stress:</label>
+        <select name="stress" required>
+            <option>low</option><option>medium</option><option>high</option>
+        </select>
+
+        <label>Irritability:</label>
+        <select name="irritability" required>
+            <option>low</option><option>medium</option><option>high</option>
+        </select>
+
+        <label>Physical Symptoms:</label>
+        <select name="physical_symptoms" required>
+            <option>none</option><option>mild</option><option>severe</option>
+        </select>
+
+        <label>Self Esteem:</label>
+        <select name="self_esteem" required>
+            <option>low</option><option>average</option><option>high</option>
+        </select>
+
+        <label>Crying Spells:</label>
+        <select name="crying_spells" required>
+            <option>never</option><option>sometimes</option><option>frequent</option>
+        </select>
+
+        <label>Suicidal Thoughts:</label>
+        <select name="suicidal_thoughts" required>
+            <option>no</option><option>sometimes</option><option>freq</option>
+        </select>
+
+        <label>Motivation:</label>
+        <select name="motivation" required>
+            <option>low</option><option>average</option><option>high</option>
+        </select>
+
+        <label>Daily Functioning:</label>
+        <select name="daily_functioning" required>
+            <option>unable</option><option>reduced</option><option>normal</option>
+        </select>
+
+        <label>Panic Attacks:</label>
+        <select name="panic_attacks" required>
+            <option>no</option><option>rare</option><option>frequent</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <div class="result">Prediction: {{ prediction }}</div>
+    {% endif %}
+
+    <a class="logout" href="/logout">Logout</a>
+</body>
+</html>
