@@ -2,10 +2,76 @@
 <html>
 <head>
   <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    p {
+      font-size: 20px;
+      background: #ecf0f1;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    strong {
+      color: #e74c3c;
+    }
+
+    a.button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #45a049;
+    }
+
+    .back-link {
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #2980b9;
+      font-weight: 600;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <h2>Prediction Result:</h2>
   <p>Does the person have Depression or Anxiety? <strong>{{ result }}</strong></p>
-  <a href="/">Go Back</a>
+
+  <a href="https://find-doctors.onrender.com/" target="_blank" class="button">
+    Find a Doctor
+  </a>
+
+  <div class="back-link">
+    <a href="/">← Go Back</a>
+  </div>
 </body>
 </html>

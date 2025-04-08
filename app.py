@@ -111,6 +111,13 @@ def predict():
 
     return render_template('predict.html')
 
+
+from flask import send_from_directory
+@app.route('/findDoctors')
+def serve_find_doctors():
+    return send_from_directory('findDoctors', 'index.html')
+
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)
